@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PokerSkin" currentState="front" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="front,back,choosed" >
+	<e:Image id="poker" source="poker_01" source.back="poker_bg_2"/>
+	<e:Image id="mask" includeIn="choosed" source="poker_glow"/>
+</e:Skin>

@@ -1,0 +1,177 @@
+{
+	"groups": [
+		{
+			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json",
+			"name": "preload"
+		},
+		{
+			"keys": "co_bg_skin_cold_jpg,co_bg_skin_warm_jpg,faces_json,info_json,poker_card_v1_json,shadow_png",
+			"name": "game"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/CheckBox/checkbox_select_disabled.png",
+			"type": "image",
+			"name": "checkbox_select_disabled_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_select_down.png",
+			"type": "image",
+			"name": "checkbox_select_down_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_select_up.png",
+			"type": "image",
+			"name": "checkbox_select_up_png"
+		},
+		{
+			"url": "assets/CheckBox/checkbox_unselect.png",
+			"type": "image",
+			"name": "checkbox_unselect_png"
+		},
+		{
+			"url": "assets/ItemRenderer/selected.png",
+			"type": "image",
+			"name": "selected_png"
+		},
+		{
+			"url": "assets/Panel/border.png",
+			"type": "image",
+			"name": "border_png"
+		},
+		{
+			"url": "assets/Panel/header.png",
+			"type": "image",
+			"name": "header_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_disabled.png",
+			"type": "image",
+			"name": "radiobutton_select_disabled_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_down.png",
+			"type": "image",
+			"name": "radiobutton_select_down_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_select_up.png",
+			"type": "image",
+			"name": "radiobutton_select_up_png"
+		},
+		{
+			"url": "assets/RadioButton/radiobutton_unselect.png",
+			"type": "image",
+			"name": "radiobutton_unselect_png"
+		},
+		{
+			"url": "assets/ScrollBar/roundthumb.png",
+			"type": "image",
+			"name": "roundthumb_png"
+		},
+		{
+			"url": "assets/Slider/thumb.png",
+			"type": "image",
+			"name": "thumb_png"
+		},
+		{
+			"url": "assets/Slider/track.png",
+			"type": "image",
+			"name": "track_png"
+		},
+		{
+			"url": "assets/Slider/tracklight.png",
+			"type": "image",
+			"name": "tracklight_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/handle.png",
+			"type": "image",
+			"name": "handle_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/off.png",
+			"type": "image",
+			"name": "off_png"
+		},
+		{
+			"url": "assets/ToggleSwitch/on.png",
+			"type": "image",
+			"name": "on_png"
+		},
+		{
+			"url": "assets/Button/button_down.png",
+			"type": "image",
+			"name": "button_down_png"
+		},
+		{
+			"url": "assets/Button/button_up.png",
+			"type": "image",
+			"name": "button_up_png"
+		},
+		{
+			"url": "assets/ProgressBar/thumb_pb.png",
+			"type": "image",
+			"name": "thumb_pb_png"
+		},
+		{
+			"url": "assets/ProgressBar/track_pb.png",
+			"type": "image",
+			"name": "track_pb_png"
+		},
+		{
+			"url": "assets/ScrollBar/track_sb.png",
+			"type": "image",
+			"name": "track_sb_png"
+		},
+		{
+			"url": "assets/bg.jpg",
+			"type": "image",
+			"name": "bg_jpg"
+		},
+		{
+			"url": "assets/egret_icon.png",
+			"type": "image",
+			"name": "egret_icon_png"
+		},
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "game/co_bg_skin_cold.jpg",
+			"type": "image",
+			"name": "co_bg_skin_cold_jpg"
+		},
+		{
+			"url": "game/co_bg_skin_warm.jpg",
+			"type": "image",
+			"name": "co_bg_skin_warm_jpg"
+		},
+		{
+			"url": "game/faces.json",
+			"type": "sheet",
+			"name": "faces_json",
+			"subkeys": "common_head_0,common_head_1,common_head_10,common_head_11,common_head_12,common_head_13,common_head_14,common_head_15,common_head_16,common_head_17,common_head_18,common_head_19,common_head_2,common_head_20,common_head_21,common_head_22,common_head_23,common_head_24,common_head_25,common_head_26,common_head_27,common_head_28,common_head_29,common_head_3,common_head_30,common_head_31,common_head_32,common_head_33,common_head_34,common_head_35,common_head_36,common_head_37,common_head_38,common_head_39,common_head_4,common_head_40,common_head_41,common_head_42,common_head_43,common_head_44,common_head_45,common_head_46,common_head_47,common_head_48,common_head_49,common_head_5,common_head_50,common_head_51,common_head_52,common_head_53,common_head_54,common_head_55,common_head_56,common_head_57,common_head_58,common_head_59,common_head_6,common_head_60,common_head_61,common_head_62,common_head_63,common_head_64,common_head_65,common_head_66,common_head_67,common_head_68,common_head_69,common_head_7,common_head_70,common_head_71,common_head_8,common_head_9"
+		},
+		{
+			"url": "game/info.json",
+			"type": "sheet",
+			"name": "info_json",
+			"subkeys": "co_btn_info_access_png,co_btn_info_charm_redeem_png,co_btn_info_choice_photo_png,co_btn_info_medel_redeem_png,co_btn_info_modify_data_png,co_btn_info_modify_face_png,co_btn_info_modify_passwd_png,co_btn_info_recharge_png,co_btn_info_selfie_png,co_btn_info_sys_face_png,co_img_face_front_png,co_img_face_selected_png,co_img_info_club_badge_bg_png,co_img_info_confirm_password_png,co_img_info_exp_progres_thumb_png,co_img_info_exp_progres_track_png,co_img_info_gender_png,co_img_info_halving_line_png,co_img_info_my_asset_png,co_img_info_my_data_png,co_img_info_new _passwd_png,co_img_info_nickname_png,co_img_info_old_passwd_png,co_img_info_vip_level_png,co_img_title_me_png,co_img_title_modify_data_png,co_img_title_modify_face_png,co_img_title_modify_password_png,co_img_title_system_face_png"
+		},
+		{
+			"url": "game/poker_card_v1.json",
+			"type": "sheet",
+			"name": "poker_card_v1_json",
+			"subkeys": "poker_01,poker_02,poker_03,poker_04,poker_05,poker_06,poker_07,poker_08,poker_09,poker_0A,poker_0B,poker_0C,poker_0D,poker_11,poker_12,poker_13,poker_14,poker_15,poker_16,poker_17,poker_18,poker_19,poker_1A,poker_1B,poker_1C,poker_1D,poker_21,poker_22,poker_23,poker_24,poker_25,poker_26,poker_27,poker_28,poker_29,poker_2A,poker_2B,poker_2C,poker_2D,poker_31,poker_32,poker_33,poker_34,poker_35,poker_36,poker_37,poker_38,poker_39,poker_3A,poker_3B,poker_3C,poker_3D,poker_4E,poker_4F,poker_bg_0,poker_bg_1,poker_bg_2,poker_glow"
+		},
+		{
+			"url": "game/shadow.png",
+			"type": "image",
+			"name": "shadow_png"
+		}
+	]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="co_bg_skin_cold_jpg"/>
+	<e:Image width="101" height="137" x="550" y="167"/>
+	<e:Group id="g_player_0" width="1200" height="750">
+		<e:Group id="holder_container_0" width="653" height="200" x="261" y="551" scaleX="1" scaleY="1">
+		</e:Group>
+	</e:Group>
+	<e:Group id="g_player_1" width="1200" height="750">
+		<e:Group id="holder_container_1" width="200" height="200" x="957" y="132" scaleX="1" scaleY="1"/>
+	</e:Group>
+	<e:Group id="g_player_2" width="1200" height="750">
+		<e:Group id="holder_container_2" width="200" height="200" x="29" y="135" scaleX="1" scaleY="1"/>
+	</e:Group>
+</e:Skin>
