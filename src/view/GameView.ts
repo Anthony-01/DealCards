@@ -108,11 +108,38 @@ namespace ddz {
                             poker.y = 0;
                             this.holder_container_0.addChild(poker);
                         });
-                        this._players[0].addEvent();
+                        this.addEvent();
                     }
                 });
             };
             move(n);
+        }
+
+        private addEvent(): void {
+            this._players[0].addEvent();
+            this.holder_container_0.touchEnabled = true;
+            this.holder_container_1.touchEnabled = true;
+            this.holder_container_2.touchEnabled = true;
+            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.touchContainer, this, true);
+            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_END, this.touchContainer, this, true);
+            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.touchContainer, this, true);
+            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_CANCEL, this.touchContainer, this, true);
+            // console.log(this.holder_container_0);
+        }
+
+        private _touchStart;
+
+
+        private touchContainer(event: egret.TouchEvent): void {
+            switch (event.type) {
+                case egret.TouchEvent.TOUCH_BEGIN:
+                case egret.TouchEvent.TOUCH_MOVE:
+
+                    break;
+                case egret.TouchEvent.TOUCH_CANCEL:
+                case egret.TouchEvent.TOUCH_END:
+                    break;
+            }
         }
 
         private moveCardTo(card: Poker, destination: Player): egret.Tween {
@@ -125,7 +152,7 @@ namespace ddz {
             };
 
             destination.hold.push(card);
-            back = egret.Tween.get(card).to(to, 300);
+            back = egret.Tween.get(card).to(to, 60);
             return back;
         }
 

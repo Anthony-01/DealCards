@@ -106,11 +106,29 @@ var ddz;
                             poker.y = 0;
                             _this.holder_container_0.addChild(poker);
                         });
-                        _this._players[0].addEvent();
+                        _this.addEvent();
                     }
                 });
             };
             move(n);
+        };
+        GameView.prototype.addEvent = function () {
+            this._players[0].addEvent();
+            this.holder_container_0.touchEnabled = true;
+            this.holder_container_1.touchEnabled = true;
+            this.holder_container_2.touchEnabled = true;
+            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.touchContainer, this, true);
+            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_END, this.touchContainer, this, true);
+            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.touchContainer, this, true);
+            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_CANCEL, this.touchContainer, this, true);
+            // console.log(this.holder_container_0);
+        };
+        GameView.prototype.touchContainer = function (event) {
+            console.log(event);
+            switch (event.type) {
+                case egret.TouchEvent.TOUCH_BEGIN:
+                    console.log("开始点击");
+            }
         };
         GameView.prototype.moveCardTo = function (card, destination) {
             var back;
@@ -120,7 +138,7 @@ var ddz;
                 y: property.y
             };
             destination.hold.push(card);
-            back = egret.Tween.get(card).to(to, 300);
+            back = egret.Tween.get(card).to(to, 60);
             return back;
         };
         //获得目的地的属性

@@ -21,6 +21,7 @@ var ddz;
         };
         //
         Player.prototype.addEvent = function () {
+            var hold = this.hold;
         };
         Player.prototype.compareValue = function (value1, value2) {
             // console.log(0x0F & value1);
