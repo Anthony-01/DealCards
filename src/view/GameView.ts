@@ -129,17 +129,24 @@ namespace ddz {
 
         private _touchStart;
 
+        private _endPos;
+
 
         private touchContainer(event: egret.TouchEvent): void {
             switch (event.type) {
                 case egret.TouchEvent.TOUCH_BEGIN:
                 case egret.TouchEvent.TOUCH_MOVE:
-
+                    if(event.type == egret.TouchEvent.TOUCH_BEGIN) this._touchStart = event.stageX;
                     break;
                 case egret.TouchEvent.TOUCH_CANCEL:
                 case egret.TouchEvent.TOUCH_END:
+                    if(event.type == egret.TouchEvent.TOUCH_END) {
+                        this._endPos = event.stageX;
+                        console.log(this._touchStart, this._endPos);
+                    }
                     break;
             }
+
         }
 
         private moveCardTo(card: Poker, destination: Player): egret.Tween {

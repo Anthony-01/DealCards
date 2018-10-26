@@ -124,10 +124,19 @@ var ddz;
             // console.log(this.holder_container_0);
         };
         GameView.prototype.touchContainer = function (event) {
-            console.log(event);
             switch (event.type) {
                 case egret.TouchEvent.TOUCH_BEGIN:
-                    console.log("开始点击");
+                case egret.TouchEvent.TOUCH_MOVE:
+                    if (event.type == egret.TouchEvent.TOUCH_BEGIN)
+                        this._touchStart = event.stageX;
+                    break;
+                case egret.TouchEvent.TOUCH_CANCEL:
+                case egret.TouchEvent.TOUCH_END:
+                    if (event.type == egret.TouchEvent.TOUCH_END) {
+                        this._endPos = event.stageX;
+                        console.log(this._touchStart, this._endPos);
+                    }
+                    break;
             }
         };
         GameView.prototype.moveCardTo = function (card, destination) {
