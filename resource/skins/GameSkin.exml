@@ -9,6 +9,6 @@
 	</e:Group>
 	<e:Group id="g_player_0" width="1200" height="750">
 		<e:Image width="101" height="137" x="550" y="167"/>
-		<e:Group id="holder_container_0" width="749" height="200" x="261" y="551" scaleX="1" scaleY="1" anchorOffsetX="0"/>
+		<e:Group id="holder_container_0" width="1200" height="200" x="0" y="550" scaleX="1" scaleY="1" anchorOffsetX="0"/>
 	</e:Group>
 </e:Skin>

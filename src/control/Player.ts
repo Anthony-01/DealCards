@@ -55,5 +55,8 @@ namespace ddz {
             return back;
         }
 
+        //游戏开始以后其他玩家的金币未显示；切图有一部分
+
+
     }
 }

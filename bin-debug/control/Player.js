@@ -4,6 +4,7 @@ var ddz;
         function Player() {
             //手牌
             this.hold = [];
+            //游戏开始以后其他玩家的金币未显示；切图有一部分
         }
         //根据手牌的牌值排列手牌
         Player.prototype.sortHold = function () {

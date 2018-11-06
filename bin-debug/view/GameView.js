@@ -45,8 +45,10 @@ var ddz;
         __extends(GameView, _super);
         function GameView() {
             var _this = _super.call(this) || this;
+            //牌堆中牌
             _this._pokerVec = [];
             _this._players = [];
+            _this._lock = false;
             _this.skinName = "GameSkin";
             _this.createPoker();
             _this.addToView();
@@ -114,29 +116,87 @@ var ddz;
         };
         GameView.prototype.addEvent = function () {
             this._players[0].addEvent();
-            this.holder_container_0.touchEnabled = true;
-            this.holder_container_1.touchEnabled = true;
-            this.holder_container_2.touchEnabled = true;
-            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.touchContainer, this, true);
-            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_END, this.touchContainer, this, true);
-            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.touchContainer, this, true);
-            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_CANCEL, this.touchContainer, this, true);
+            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.touchContainer, this);
+            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_END, this.touchContainer, this);
+            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.touchContainer, this);
+            this.holder_container_0.addEventListener(egret.TouchEvent.TOUCH_CANCEL, this.touchContainer, this);
             // console.log(this.holder_container_0);
+        };
+        //如果手牌减少，需要重新排序手牌，并且选牌所需要计算的x,y轴数值需要重新计算
+        //如果牌的数量减少，需要根据手牌数量重新排列手牌位置
+        GameView.prototype.sortHoldContainer = function () {
         };
         GameView.prototype.touchContainer = function (event) {
             switch (event.type) {
                 case egret.TouchEvent.TOUCH_BEGIN:
-                case egret.TouchEvent.TOUCH_MOVE:
-                    if (event.type == egret.TouchEvent.TOUCH_BEGIN)
-                        this._touchStart = event.stageX;
+                case egret.TouchEvent.TOUCH_MOVE: {
+                    //获得开始的节点
+                    var point = new egret.Point(event.localX, event.localY);
+                    if (event.type == egret.TouchEvent.TOUCH_BEGIN) {
+                        this.mTouchStart = point;
+                        this._lock = true;
+                    }
+                    var tp = this.mTouchStart.x < point.x ? this.mTouchStart : point; //保存小的节点
+                    var tp2 = this.mTouchStart.x < point.x ? point : this.mTouchStart; //较大节点
+                    // console.log(tp);
+                    //计算出this.mTouchStart 以及 tp 之间的牌，并且改变他们之间的表现
+                    //通过this._hold 所牌的范围 第一张牌 this._startPoint.x
+                    if (this._lock) {
+                        this._lock = false;
+                        this._players[0].hold.forEach(function (poker) {
+                            poker.m_lock = true;
+                        });
+                    }
+                    var startIndex = void 0, endIndex = void 0;
+                    for (var n = 0; n < this._players[0].hold.length; n++) {
+                        if (this._players[0].hold[n].x + 30 >= tp.x) {
+                            startIndex = n;
+                            break;
+                        }
+                    }
+                    for (var n = this._players[0].hold.length - 1; n >= 0; n--) {
+                        if (this._players[0].hold[n].x <= tp2.x) {
+                            endIndex = n;
+                            break;
+                        }
+                    }
+                    console.log("更改状态", startIndex, endIndex);
+                    //得到所选中牌的index数值，切换被选中的牌选中状态
+                    for (var n = 0; n < this._players[0].hold.length; n++) {
+                        this._players[0].hold[n].removeMask();
+                    }
+                    for (var n = startIndex; n <= endIndex; n++) {
+                        this._players[0].hold[n].addMask();
+                        // this._pokerVec[n].toggleSelected();
+                    }
+                    //记录牌最开始时候的状态，将他们设置成相反的状态
                     break;
-                case egret.TouchEvent.TOUCH_CANCEL:
+                }
                 case egret.TouchEvent.TOUCH_END:
-                    if (event.type == egret.TouchEvent.TOUCH_END) {
-                        this._endPos = event.stageX;
-                        console.log(this._touchStart, this._endPos);
+                case egret.TouchEvent.TOUCH_CANCEL: {
+                    var point = new egret.Point(event.localX, event.localY);
+                    var tp = this.mTouchStart.x < point.x ? this.mTouchStart : point; //保存小的节点
+                    var tp2 = this.mTouchStart.x < point.x ? point : this.mTouchStart; //较大节点
+                    var startIndex = void 0, endIndex = void 0;
+                    for (var n = 0; n < this._players[0].hold.length; n++) {
+                        if (this._players[0].hold[n].x + 30 >= tp.x) {
+                            startIndex = n;
+                            break;
+                        }
+                    }
+                    for (var n = this._players[0].hold.length - 1; n >= 0; n--) {
+                        if (this._players[0].hold[n].x <= tp2.x) {
+                            endIndex = n;
+                            break;
+                        }
+                    }
+                    //去除遮罩以及更换选择状态
+                    for (var n = startIndex; n <= endIndex; n++) {
+                        this._players[0].hold[n].removeMask();
+                        this._players[0].hold[n].toggleSelected();
                     }
                     break;
+                }
             }
         };
         GameView.prototype.moveCardTo = function (card, destination) {
